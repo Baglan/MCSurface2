@@ -1,0 +1,3 @@
+[submodule "MCButtonView"]
+	path = MCButtonView
+	url = git@github.com:Baglan/MCButtonView

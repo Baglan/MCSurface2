@@ -21,6 +21,13 @@
 		8671E7CD191B310300213C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8671E7AF191B310300213C87 /* UIKit.framework */; };
 		8671E7D5191B310300213C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8671E7D3191B310300213C87 /* InfoPlist.strings */; };
 		8671E7D7191B310300213C87 /* MCSurface2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7D6191B310300213C87 /* MCSurface2Tests.m */; };
+		8671E7E7191B31D300213C87 /* MCSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7E2191B31D300213C87 /* MCSurface.m */; };
+		8671E7E8191B31D300213C87 /* MCSurfaceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7E4191B31D300213C87 /* MCSurfaceItem.m */; };
+		8671E7E9191B31D300213C87 /* MCSurfaceViewControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7E6191B31D300213C87 /* MCSurfaceViewControllerItem.m */; };
+		8671E7F2191B322000213C87 /* LabelSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7EE191B322000213C87 /* LabelSquare.m */; };
+		8671E7F3191B322000213C87 /* LabelSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7F0191B322000213C87 /* LabelSquareViewController.m */; };
+		8671E7F4191B322000213C87 /* LabelSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8671E7F1191B322000213C87 /* LabelSquareViewController.xib */; };
+		8671E7F9191B339B00213C87 /* MCButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7F8191B339B00213C87 /* MCButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,19 @@
 		8671E7D2191B310300213C87 /* MCSurface2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCSurface2Tests-Info.plist"; sourceTree = "<group>"; };
 		8671E7D4191B310300213C87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8671E7D6191B310300213C87 /* MCSurface2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCSurface2Tests.m; sourceTree = "<group>"; };
+		8671E7E1191B31D300213C87 /* MCSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSurface.h; path = Classes/MCSurface.h; sourceTree = "<group>"; };
+		8671E7E2191B31D300213C87 /* MCSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSurface.m; path = Classes/MCSurface.m; sourceTree = "<group>"; };
+		8671E7E3191B31D300213C87 /* MCSurfaceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSurfaceItem.h; path = Classes/MCSurfaceItem.h; sourceTree = "<group>"; };
+		8671E7E4191B31D300213C87 /* MCSurfaceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSurfaceItem.m; path = Classes/MCSurfaceItem.m; sourceTree = "<group>"; };
+		8671E7E5191B31D300213C87 /* MCSurfaceViewControllerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSurfaceViewControllerItem.h; path = Classes/MCSurfaceViewControllerItem.h; sourceTree = "<group>"; };
+		8671E7E6191B31D300213C87 /* MCSurfaceViewControllerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSurfaceViewControllerItem.m; path = Classes/MCSurfaceViewControllerItem.m; sourceTree = "<group>"; };
+		8671E7ED191B322000213C87 /* LabelSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelSquare.h; sourceTree = "<group>"; };
+		8671E7EE191B322000213C87 /* LabelSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelSquare.m; sourceTree = "<group>"; };
+		8671E7EF191B322000213C87 /* LabelSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelSquareViewController.h; sourceTree = "<group>"; };
+		8671E7F0191B322000213C87 /* LabelSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelSquareViewController.m; sourceTree = "<group>"; };
+		8671E7F1191B322000213C87 /* LabelSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelSquareViewController.xib; sourceTree = "<group>"; };
+		8671E7F7191B339B00213C87 /* MCButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCButtonView.h; path = MCButtonView/Classes/MCButtonView.h; sourceTree = "<group>"; };
+		8671E7F8191B339B00213C87 /* MCButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCButtonView.m; path = MCButtonView/Classes/MCButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +102,8 @@
 		8671E79F191B310300213C87 = {
 			isa = PBXGroup;
 			children = (
+				8671E7E0191B314900213C87 /* Classes */,
+				8671E7F5191B337E00213C87 /* Helpers */,
 				8671E7B1191B310300213C87 /* MCSurface2 */,
 				8671E7D0191B310300213C87 /* MCSurface2Tests */,
 				8671E7AA191B310300213C87 /* Frameworks */,
@@ -112,6 +134,11 @@
 		8671E7B1191B310300213C87 /* MCSurface2 */ = {
 			isa = PBXGroup;
 			children = (
+				8671E7ED191B322000213C87 /* LabelSquare.h */,
+				8671E7EE191B322000213C87 /* LabelSquare.m */,
+				8671E7EF191B322000213C87 /* LabelSquareViewController.h */,
+				8671E7F0191B322000213C87 /* LabelSquareViewController.m */,
+				8671E7F1191B322000213C87 /* LabelSquareViewController.xib */,
 				8671E7BA191B310300213C87 /* AppDelegate.h */,
 				8671E7BB191B310300213C87 /* AppDelegate.m */,
 				8671E7BD191B310300213C87 /* Main.storyboard */,
@@ -150,6 +177,36 @@
 				8671E7D3191B310300213C87 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8671E7E0191B314900213C87 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8671E7E1191B31D300213C87 /* MCSurface.h */,
+				8671E7E2191B31D300213C87 /* MCSurface.m */,
+				8671E7E3191B31D300213C87 /* MCSurfaceItem.h */,
+				8671E7E4191B31D300213C87 /* MCSurfaceItem.m */,
+				8671E7E5191B31D300213C87 /* MCSurfaceViewControllerItem.h */,
+				8671E7E6191B31D300213C87 /* MCSurfaceViewControllerItem.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8671E7F5191B337E00213C87 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8671E7F6191B338600213C87 /* MCButtonView */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		8671E7F6191B338600213C87 /* MCButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				8671E7F7191B339B00213C87 /* MCButtonView.h */,
+				8671E7F8191B339B00213C87 /* MCButtonView.m */,
+			);
+			name = MCButtonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +287,7 @@
 			files = (
 				8671E7C4191B310300213C87 /* Images.xcassets in Resources */,
 				8671E7B6191B310300213C87 /* InfoPlist.strings in Resources */,
+				8671E7F4191B322000213C87 /* LabelSquareViewController.xib in Resources */,
 				8671E7BF191B310300213C87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8671E7F9191B339B00213C87 /* MCButtonView.m in Sources */,
+				8671E7E8191B31D300213C87 /* MCSurfaceItem.m in Sources */,
+				8671E7F2191B322000213C87 /* LabelSquare.m in Sources */,
 				8671E7C2191B310300213C87 /* ViewController.m in Sources */,
 				8671E7BC191B310300213C87 /* AppDelegate.m in Sources */,
 				8671E7B8191B310300213C87 /* main.m in Sources */,
+				8671E7E7191B31D300213C87 /* MCSurface.m in Sources */,
+				8671E7E9191B31D300213C87 /* MCSurfaceViewControllerItem.m in Sources */,
+				8671E7F3191B322000213C87 /* LabelSquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -365,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -379,6 +443,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCSurface2/MCSurface2-Prefix.pch";
 				INFOPLIST_FILE = "MCSurface2/MCSurface2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +457,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCSurface2/MCSurface2-Prefix.pch";
 				INFOPLIST_FILE = "MCSurface2/MCSurface2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
