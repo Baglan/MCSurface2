@@ -28,6 +28,7 @@
 		8671E7F3191B322000213C87 /* LabelSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7F0191B322000213C87 /* LabelSquareViewController.m */; };
 		8671E7F4191B322000213C87 /* LabelSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8671E7F1191B322000213C87 /* LabelSquareViewController.xib */; };
 		8671E7F9191B339B00213C87 /* MCButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8671E7F8191B339B00213C87 /* MCButtonView.m */; };
+		8696C776195EC596006E206C /* MCSurface+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 8696C775195EC596006E206C /* MCSurface+Convenience.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		8671E7F1191B322000213C87 /* LabelSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelSquareViewController.xib; sourceTree = "<group>"; };
 		8671E7F7191B339B00213C87 /* MCButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCButtonView.h; path = MCButtonView/Classes/MCButtonView.h; sourceTree = "<group>"; };
 		8671E7F8191B339B00213C87 /* MCButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCButtonView.m; path = MCButtonView/Classes/MCButtonView.m; sourceTree = "<group>"; };
+		8696C774195EC596006E206C /* MCSurface+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MCSurface+Convenience.h"; path = "Classes/MCSurface+Convenience.h"; sourceTree = "<group>"; };
+		8696C775195EC596006E206C /* MCSurface+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MCSurface+Convenience.m"; path = "Classes/MCSurface+Convenience.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 				8671E7E4191B31D300213C87 /* MCSurfaceItem.m */,
 				8671E7E5191B31D300213C87 /* MCSurfaceViewControllerItem.h */,
 				8671E7E6191B31D300213C87 /* MCSurfaceViewControllerItem.m */,
+				8696C774195EC596006E206C /* MCSurface+Convenience.h */,
+				8696C775195EC596006E206C /* MCSurface+Convenience.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				8671E7BC191B310300213C87 /* AppDelegate.m in Sources */,
 				8671E7B8191B310300213C87 /* main.m in Sources */,
 				8671E7E7191B31D300213C87 /* MCSurface.m in Sources */,
+				8696C776195EC596006E206C /* MCSurface+Convenience.m in Sources */,
 				8671E7E9191B31D300213C87 /* MCSurfaceViewControllerItem.m in Sources */,
 				8671E7F3191B322000213C87 /* LabelSquareViewController.m in Sources */,
 			);
@@ -522,6 +528,7 @@
 				8671E7DC191B310300213C87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8671E7DD191B310300213C87 /* Build configuration list for PBXNativeTarget "MCSurface2Tests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +537,7 @@
 				8671E7DF191B310300213C87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
