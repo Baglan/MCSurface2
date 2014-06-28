@@ -102,7 +102,9 @@
 
 - (void)updateView:(UIView *)view forSurface:(MCSurface *)surface
 {
-    view.frame = [self frameForSurface:surface];
+    CGPoint contentOffset = surface.contentOffset;
+    CGRect frame = [self frameForSurface:surface];
+    view.frame = CGRectApplyAffineTransform(frame, CGAffineTransformMakeTranslation(-contentOffset.x, -contentOffset.y));
 }
 
 #pragma mark - Viewport bounds

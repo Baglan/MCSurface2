@@ -48,6 +48,8 @@ enum MCSurface_ScrollDirection {
 @end
 
 @implementation MCSurface {
+    UIScrollView * _scrollView;
+    
     NSMutableDictionary * _reusableViews;
     
     NSMutableSet * _currentItems;
@@ -58,7 +60,7 @@ enum MCSurface_ScrollDirection {
     
     NSMutableSet * _controllers;
     
-    id<UIScrollViewDelegate> _subDelegate;
+    // id<UIScrollViewDelegate> _subDelegate;
 }
 
 #pragma mark - Init
@@ -79,6 +81,12 @@ enum MCSurface_ScrollDirection {
 
 - (void)setup
 {
+    _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    _scrollView.delegate = self;
+    [self addGestureRecognizer:_scrollView.panGestureRecognizer];
+    [self addSubview:_scrollView];
+    _scrollView.hidden = YES;
+    
     _reusableViews = [NSMutableDictionary dictionary];
     
     _currentItems = [NSMutableSet set];
@@ -87,16 +95,80 @@ enum MCSurface_ScrollDirection {
     [self scrollingEnded];
     
     _controllers = [NSMutableSet set];
+}
+
+#pragma mark - Properties
+
+- (BOOL)isDirectionalLockEnabled
+{
+    return [_scrollView isDirectionalLockEnabled];
+}
+
+- (void)setDirectionalLockEnabled:(BOOL)directionalLockEnabled
+{
+    [_scrollView setDirectionalLockEnabled:directionalLockEnabled];
+}
+
+- (BOOL)isPagingEnabled
+{
+    return [_scrollView isPagingEnabled];
+}
+
+- (void)setPagingEnabled:(BOOL)pagingEnabled
+{
+    [_scrollView setPagingEnabled:pagingEnabled];
+}
+
+- (CGSize)pageSize
+{
+    return _scrollView.bounds.size;
+}
+
+- (void)setPageSize:(CGSize)pageSize
+{
+    _scrollView.bounds = CGRectMake(0, 0, pageSize.width, pageSize.height);
+}
+
+- (CGPoint)contentOffset
+{
+    return _scrollView.contentOffset;
+}
+
+- (void)setContentOffset:(CGPoint)contentOffset
+{
+    [_scrollView setContentOffset:contentOffset];
+}
+
+- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
+{
+    if (animated) {
+        _scrolling = YES;
+    }
     
-    [super setDelegate:self];
+    [_scrollView setContentOffset:contentOffset animated:animated];
+}
+
+- (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
+{
+    [_scrollView scrollRectToVisible:rect animated:animated];
+}
+
+- (CGSize)contentSize
+{
+    return [_scrollView contentSize];
+}
+
+- (void)setContentSize:(CGSize)contentSize
+{
+    [_scrollView setContentSize:contentSize];
 }
 
 #pragma mark - Delegate and Subdelegate
 
-- (void)setDelegate:(id<UIScrollViewDelegate>)delegate
-{
-    _subDelegate = delegate;
-}
+//- (void)setDelegate:(id<UIScrollViewDelegate>)delegate
+//{
+//    _subDelegate = delegate;
+//}
 
 - (BOOL)respondsToSelector:(SEL)aSelector;
 {
@@ -104,7 +176,7 @@ enum MCSurface_ScrollDirection {
         return YES;
     }
     
-    if (protocol_hasSelector(@protocol(UIScrollViewDelegate), aSelector) && _subDelegate && [_subDelegate respondsToSelector:aSelector]) {
+    if (protocol_hasSelector(@protocol(UIScrollViewDelegate), aSelector) && _delegate && [_delegate respondsToSelector:aSelector]) {
         return YES;
     }
     
@@ -113,8 +185,8 @@ enum MCSurface_ScrollDirection {
 
 - (id)forwardingTargetForSelector:(SEL)aSelector;
 {
-    if (_subDelegate && protocol_hasSelector(@protocol(UIScrollViewDelegate), aSelector)) {
-        return _subDelegate;
+    if (_delegate && protocol_hasSelector(@protocol(UIScrollViewDelegate), aSelector)) {
+        return _delegate;
     }
     
     return nil;
@@ -127,8 +199,8 @@ enum MCSurface_ScrollDirection {
     _scrollDirection = MCSurface_ScrollDirectionUndecided;
     _initialContentOffset = self.contentOffset;
     
-    if (_subDelegate && [_subDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)]) {
-        [_subDelegate scrollViewWillBeginDragging:scrollView];
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewWillBeginDragging:)]) {
+        [_delegate scrollViewWillBeginDragging:scrollView];
     }
 }
 
@@ -157,8 +229,8 @@ enum MCSurface_ScrollDirection {
 {
     [self scrollingEnded];
     
-    if (_subDelegate && [_subDelegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
-        [_subDelegate scrollViewDidEndDecelerating:scrollView];
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
+        [_delegate scrollViewDidEndDecelerating:scrollView];
     }
 }
 
@@ -166,8 +238,8 @@ enum MCSurface_ScrollDirection {
 {
     [self scrollingEnded];
     
-    if (_subDelegate && [_subDelegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)]) {
-        [_subDelegate scrollViewDidEndScrollingAnimation:scrollView];
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)]) {
+        [_delegate scrollViewDidEndScrollingAnimation:scrollView];
     }
 }
 
@@ -177,8 +249,8 @@ enum MCSurface_ScrollDirection {
         [self scrollingEnded];
     }
     
-    if (_subDelegate && [_subDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)]) {
-        [_subDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)]) {
+        [_delegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
     }
 }
 
@@ -189,7 +261,7 @@ enum MCSurface_ScrollDirection {
     }
     
     if (self.directionalLockEnabled) {
-        if (self.dragging && _scrollDirection == MCSurface_ScrollDirectionUndecided) {
+        if (_scrollView.dragging && _scrollDirection == MCSurface_ScrollDirectionUndecided) {
             CGPoint contentOffset = scrollView.contentOffset;
             double deltaX = fabs(contentOffset.x - _initialContentOffset.x);
             double deltaY = fabs(contentOffset.y - _initialContentOffset.y);
@@ -213,8 +285,8 @@ enum MCSurface_ScrollDirection {
     
     [self setNeedsLayout];
     
-    if (_subDelegate && [_subDelegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
-        [_subDelegate scrollViewDidScroll:scrollView];
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+        [_delegate scrollViewDidScroll:scrollView];
     }
 }
 
@@ -279,17 +351,6 @@ enum MCSurface_ScrollDirection {
         }
     }
     return nil;
-}
-
-#pragma mark - Content offset
-
-- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
-{
-    if (animated) {
-        _scrolling = YES;
-    }
-    
-    [super setContentOffset:contentOffset animated:animated];
 }
 
 #pragma mark - Layout
