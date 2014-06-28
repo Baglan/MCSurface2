@@ -35,8 +35,8 @@
 
 - (void)setViewportFrame:(CGRect)frame atContentOffset:(CGPoint)contentOffset
 {
-    frame.origin.x -= contentOffset.x * (1 - self.horizontalParallaxRatio);
-    frame.origin.y -= contentOffset.y * (1 - self.verticalParallaxRatio);
+    frame.origin.x += contentOffset.x * (1 - self.horizontalParallaxRatio);
+    frame.origin.y += contentOffset.y * (1 - self.verticalParallaxRatio);
     [self setFrame:frame];
 }
 

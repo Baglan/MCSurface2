@@ -40,7 +40,9 @@
     [items addObject:secondLabel];
     
     LabelSquare * thirdLabel = [[LabelSquare alloc] init];
-    [thirdLabel setFrame:CGRectMake(620, 50, 300, 300)];
+    // [thirdLabel setFrame:CGRectMake(620, 50, 300, 300)];
+    thirdLabel.horizontalParallaxRatio = 0.2;
+    [thirdLabel setViewportFrame:CGRectMake(-20, 50, 300, 300) atContentOffset:CGPointMake(640, 0)];
     thirdLabel.zIndex = 10002;
     thirdLabel.text = @"Third";
     thirdLabel.color = [UIColor blueColor];
