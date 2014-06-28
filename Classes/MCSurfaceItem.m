@@ -20,6 +20,16 @@
     CGFloat _maxCenterBottom;
 }
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.horizontalParallaxRatio = 1.0;
+        self.verticalParallaxRatio = 1.0;
+    }
+    return self;
+}
+
 - (void)calculateRelatedValues
 {
     CGFloat halfWidth = _size.width / 2;
@@ -35,8 +45,8 @@
 
 - (void)setViewportFrame:(CGRect)frame atContentOffset:(CGPoint)contentOffset
 {
-    frame.origin.x += contentOffset.x * (1 - self.horizontalParallaxRatio);
-    frame.origin.y += contentOffset.y * (1 - self.verticalParallaxRatio);
+    frame.origin.x += contentOffset.x * self.horizontalParallaxRatio;
+    frame.origin.y += contentOffset.y * self.verticalParallaxRatio;
     [self setFrame:frame];
 }
 
@@ -59,8 +69,8 @@
     CGPoint center = _center;
     
     // Calculate parallax
-    center.x -= contentOffset.x * self.horizontalParallaxRatio;
-    center.y -= contentOffset.y * self.verticalParallaxRatio;
+    center.x -= contentOffset.x * (self.horizontalParallaxRatio - 1);
+    center.y -= contentOffset.y * (self.verticalParallaxRatio - 1);
     
     // Apply bounds
     center.x = center.x < _minCenterLeft + contentOffset.x ? _minCenterLeft + contentOffset.x : center.x;

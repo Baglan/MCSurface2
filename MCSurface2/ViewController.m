@@ -41,13 +41,13 @@
     
     LabelSquare * thirdLabel = [[LabelSquare alloc] init];
     // [thirdLabel setFrame:CGRectMake(620, 50, 300, 300)];
-    thirdLabel.horizontalParallaxRatio = 0.2;
-    [thirdLabel setViewportFrame:CGRectMake(-20, 50, 300, 300) atContentOffset:CGPointMake(640, 0)];
+    thirdLabel.horizontalParallaxRatio = -1;
+    [thirdLabel setViewportFrame:CGRectMake(0, 0, 300, 300) atContentOffset:CGPointMake(320, 460)];
     thirdLabel.zIndex = 10002;
     thirdLabel.text = @"Third";
     thirdLabel.color = [UIColor blueColor];
-    thirdLabel.topViewportBound = -140;
-    thirdLabel.rightViewportBound = 560;
+    // thirdLabel.topViewportBound = -140;
+    // thirdLabel.rightViewportBound = 560;
     [items addObject:thirdLabel];
     
     _surface.items = items;
