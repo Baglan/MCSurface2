@@ -15,7 +15,7 @@
 {
     CGSize pageSize = self.pageSize;
     CGRect rect = self.bounds;
-    rect.origin = CGPointMake(pageSize.width * horizontalPage, pageSize.height * horizontalPage);
+    rect.origin = CGPointMake(pageSize.width * horizontalPage, pageSize.height * verticalPage);
     [self scrollRectToVisible:rect animated:animated];
 }
 
