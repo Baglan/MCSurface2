@@ -136,21 +136,25 @@ enum MCSurface_ScrollDirection {
 
 - (void)setContentOffset:(CGPoint)contentOffset
 {
-    [_scrollView setContentOffset:contentOffset];
+    [self setContentOffset:contentOffset animated:NO];
 }
 
 - (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
 {
-    if (animated) {
-        _scrolling = YES;
-    }
+    _scrolling = animated;
     
     [_scrollView setContentOffset:contentOffset animated:animated];
+    
+    _scrolling = animated ? _scrolling : NO;
 }
 
 - (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
 {
+    _scrolling = animated;
+    
     [_scrollView scrollRectToVisible:rect animated:animated];
+    
+    _scrolling = animated ? _scrolling : NO;
 }
 
 - (CGSize)contentSize
