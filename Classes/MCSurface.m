@@ -141,20 +141,16 @@ enum MCSurface_ScrollDirection {
 
 - (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
 {
-    _scrolling = animated;
-    
+    [self setScrolling:animated];
     [_scrollView setContentOffset:contentOffset animated:animated];
-    
-    _scrolling = animated ? _scrolling : NO;
+    [self setScrolling:animated ? self.scrolling : NO];
 }
 
 - (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
 {
-    _scrolling = animated;
-    
+    [self setScrolling:animated];
     [_scrollView scrollRectToVisible:rect animated:animated];
-    
-    _scrolling = animated ? _scrolling : NO;
+    [self setScrolling:animated ? self.scrolling : NO];
 }
 
 - (CGSize)contentSize
@@ -211,7 +207,7 @@ enum MCSurface_ScrollDirection {
 - (void)scrollingEnded
 {
     _scrollDirection = MCSurface_ScrollDirectionUndecided;
-    _scrolling = NO;
+    [self setScrolling:NO];
     
     // Re-order subviews by layer zPosition
     // This is necessary to preserve the correct responder chain
@@ -260,8 +256,8 @@ enum MCSurface_ScrollDirection {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (!_scrolling) {
-        _scrolling = YES;
+    if (!self.scrolling) {
+        [self setScrolling:YES];
     }
     
     if (self.directionalLockEnabled) {
@@ -396,6 +392,22 @@ enum MCSurface_ScrollDirection {
     }
     
     [super layoutSubviews];
+}
+
+#pragma mark - Scrolling
+
+- (void)setScrolling:(BOOL)scrolling
+{
+    _scrolling = scrolling;
+    if (_scrolling) {
+        if ([self.delegate respondsToSelector:@selector(surfaceDidStartScrolling:)]) {
+            [self.delegate surfaceDidStartScrolling:self];
+        }
+    } else {
+        if ([self.delegate respondsToSelector:@selector(surfaceDidFinishScrolling:)]) {
+            [self.delegate surfaceDidFinishScrolling:self];
+        }
+    }
 }
 
 @end

@@ -37,4 +37,9 @@
 
 @protocol MCSurfaceDelegate <UIScrollViewDelegate>
 
+@optional
+
+- (void)surfaceDidStartScrolling:(MCSurface *)surface;
+- (void)surfaceDidFinishScrolling:(MCSurface *)surface;
+
 @end
