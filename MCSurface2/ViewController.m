@@ -50,8 +50,41 @@
     // thirdLabel.rightViewportBound = 560;
     [items addObject:thirdLabel];
     
+    // Constraints
+    LabelSquare * c1 = [[LabelSquare alloc] init];
+    [c1 setViewportFrame:CGRectMake(100, 100, 100, 100) atContentOffset:CGPointMake(0, 0)];
+    c1.zIndex = 20000;
+    c1.text = @"A";
+    c1.color = [UIColor grayColor];
+    
+    [c1 addConstraint:[[MCSurfaceConstraint alloc] initWithValue:100 position:MCSurfaceConstraintPosition_Left reference:MCSurfaceConstraintReference_Viewport]];
+    [c1 addConstraint:[[MCSurfaceConstraint alloc] initWithValue:720 position:MCSurfaceConstraintPosition_Right reference:MCSurfaceConstraintReference_Surface]];
+
+    [items addObject:c1];
+    
+    LabelSquare * c2 = [[LabelSquare alloc] init];
+    [c2 setViewportFrame:CGRectMake(100, 100, 100, 100) atContentOffset:CGPointMake(640, 0)];
+    c2.zIndex = 20000;
+    c2.text = @"B";
+    c2.color = [UIColor grayColor];
+    
+    [c2 addConstraint:[[MCSurfaceConstraint alloc] initWithValue:100 position:MCSurfaceConstraintPosition_Left reference:MCSurfaceConstraintReference_Viewport]];
+    [c2 addConstraint:[[MCSurfaceConstraint alloc] initWithValue:1040 position:MCSurfaceConstraintPosition_Right reference:MCSurfaceConstraintReference_Surface]];
+    
+    [items addObject:c2];
+    
+    LabelSquare * c3 = [[LabelSquare alloc] init];
+    [c3 setViewportFrame:CGRectMake(100, 100, 100, 100) atContentOffset:CGPointMake(960, 0)];
+    c3.zIndex = 20000;
+    c3.text = @"B";
+    c3.color = [UIColor grayColor];
+    
+    [c3 addConstraint:[[MCSurfaceConstraint alloc] initWithValue:100 position:MCSurfaceConstraintPosition_Left reference:MCSurfaceConstraintReference_Viewport]];
+    
+    [items addObject:c3];
+    
     _surface.items = items;
-    _surface.contentSize = CGSizeMake(_surface.bounds.size.width * 3, 460 * 2);
+    _surface.contentSize = CGSizeMake(_surface.bounds.size.width * 5, 460 * 2);
     _surface.directionalLockEnabled = YES;
     _surface.pagingEnabled = YES;
     

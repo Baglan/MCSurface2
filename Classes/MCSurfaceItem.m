@@ -26,6 +26,7 @@
     if (self) {
         self.horizontalParallaxRatio = 1.0;
         self.verticalParallaxRatio = 1.0;
+        _constraints = [NSMutableArray array];
     }
     return self;
 }
@@ -77,6 +78,16 @@
     center.y = center.y < _minCenterTop + contentOffset.y ? _minCenterTop + contentOffset.y : center.y;
     center.x = center.x > _maxCenterRight + contentOffset.x ? _maxCenterRight + contentOffset.x : center.x;
     center.y = center.y > _maxCenterBottom + contentOffset.y ? _maxCenterBottom + contentOffset.y : center.y;
+    
+    // Apply constraints
+    // CGRect frame = [self frameForSurface:surface];
+    CGFloat halfWidth = _size.width / 2;
+    CGFloat halfHeight = _size.height / 2;
+    CGRect frame = CGRectMake(center.x - halfWidth, center.y - halfHeight, _size.width, _size.height);
+    for (MCSurfaceConstraint * constraint in self.constraints) {
+        frame = [constraint adjustedFrame:frame forContentOffset:contentOffset];
+    }
+    center = CGPointMake(frame.origin.x + halfWidth, frame.origin.y + halfHeight);
     
     return center;
 }
@@ -157,6 +168,13 @@
 - (CGFloat)bottomViewportBound
 {
     return _maxCenterBottom + _size.height / 2;
+}
+
+#pragma mark - Constraints
+
+- (void)addConstraint:(MCSurfaceConstraint *)constraint
+{
+    [_constraints addObject:constraint];
 }
 
 @end

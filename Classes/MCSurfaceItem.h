@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MCSurface.h"
+#import "MCSurfaceConstraint.h"
 
 @interface MCSurfaceItem : NSObject
 
@@ -21,6 +22,8 @@
 @property (nonatomic, assign) CGFloat rightViewportBound;
 @property (nonatomic, assign) CGFloat bottomViewportBound;
 
+@property (nonatomic, readonly) NSMutableArray * constraints;
+
 - (void)setViewportFrame:(CGRect)frame atContentOffset:(CGPoint)contentOffset;
 - (void)setFrame:(CGRect)frame;
 - (CGRect)frameForSurface:(MCSurface *)surface;
@@ -29,5 +32,7 @@
 - (UIView *)viewForSurface:(MCSurface *)surface;
 - (void)prepareView:(UIView *)view forSurface:(MCSurface *)surface;
 - (void)updateView:(UIView *)view forSurface:(MCSurface *)surface;
+
+- (void)addConstraint:(MCSurfaceConstraint *)constraint;
 
 @end
