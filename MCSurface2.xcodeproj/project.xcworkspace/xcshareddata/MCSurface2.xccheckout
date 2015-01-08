@@ -11,21 +11,21 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4861C8339CB52D2377C7D12486C91CDE149F10A1</key>
-		<string>ssh://github.com/Baglan/MCSurface2.git</string>
+		<string>github.com:Baglan/MCSurface2.git</string>
 		<key>E793E9FD6F97D86A7EE613393AF85E80BB53160F</key>
-		<string>ssh://github.com/Baglan/MCButtonView</string>
+		<string>github.com:Baglan/MCButtonView</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MCSurface2.xcodeproj/project.xcworkspace</string>
+	<string>MCSurface2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4861C8339CB52D2377C7D12486C91CDE149F10A1</key>
 		<string>../..</string>
 		<key>E793E9FD6F97D86A7EE613393AF85E80BB53160F</key>
-		<string>../../MCButtonView</string>
+		<string>../..MCButtonView</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/Baglan/MCSurface2.git</string>
+	<string>github.com:Baglan/MCSurface2.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -36,17 +36,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E793E9FD6F97D86A7EE613393AF85E80BB53160F</string>
+			<string>4861C8339CB52D2377C7D12486C91CDE149F10A1</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MCButtonView</string>
+			<string>MCSurface2</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4861C8339CB52D2377C7D12486C91CDE149F10A1</string>
+			<string>E793E9FD6F97D86A7EE613393AF85E80BB53160F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MCSurface2</string>
+			<string>MCSurface2MCButtonView</string>
 		</dict>
 	</array>
 </dict>
