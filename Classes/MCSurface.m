@@ -204,11 +204,8 @@ enum MCSurface_ScrollDirection {
     }
 }
 
-- (void)scrollingEnded
+- (void)reorderSubviews
 {
-    _scrollDirection = MCSurface_ScrollDirectionUndecided;
-    [self setScrolling:NO];
-    
     // Re-order subviews by layer zPosition
     // This is necessary to preserve the correct responder chain
     NSArray * sortedViews = [_currentViews.allValues sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -221,6 +218,14 @@ enum MCSurface_ScrollDirection {
         UIView * view = obj;
         [self bringSubviewToFront:view];
     }];
+}
+
+- (void)scrollingEnded
+{
+    _scrollDirection = MCSurface_ScrollDirectionUndecided;
+    [self setScrolling:NO];
+    
+    [self reorderSubviews];
         
     [self setNeedsLayout];
 }
@@ -390,6 +395,8 @@ enum MCSurface_ScrollDirection {
         UIView * view = _currentViews[item.indexPath];
         [item updateView:view forSurface:self];
     }
+    
+    [self reorderSubviews];
     
     [super layoutSubviews];
 }
