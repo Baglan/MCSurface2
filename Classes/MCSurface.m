@@ -119,6 +119,26 @@ enum MCSurface_ScrollDirection {
     [_scrollView setPagingEnabled:pagingEnabled];
 }
 
+- (BOOL)alwaysBounceHorizontal
+{
+    return _scrollView.alwaysBounceHorizontal;
+}
+
+- (void)setAlwaysBounceHorizontal:(BOOL)alwaysBounceHorizontal
+{
+    _scrollView.alwaysBounceHorizontal = alwaysBounceHorizontal;
+}
+
+- (BOOL)alwaysBounceVertical
+{
+    return _scrollView.alwaysBounceVertical;
+}
+
+- (void)setAlwaysBounceVertical:(BOOL)alwaysBounceVertical
+{
+    _scrollView.alwaysBounceVertical = alwaysBounceVertical;
+}
+
 - (CGSize)pageSize
 {
     return _scrollView.bounds.size;

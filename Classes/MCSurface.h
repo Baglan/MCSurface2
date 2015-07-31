@@ -15,8 +15,10 @@
 
 @property(nonatomic, getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 @property(nonatomic, getter=isPagingEnabled) BOOL pagingEnabled;
-@property (nonatomic) CGSize pageSize;
+@property(nonatomic) CGSize pageSize;
 @property(nonatomic) CGPoint contentOffset;
+@property(nonatomic) BOOL alwaysBounceHorizontal;
+@property(nonatomic) BOOL alwaysBounceVertical;
 
 - (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated;
 - (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated;
