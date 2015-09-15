@@ -128,6 +128,18 @@
     view.frame = CGRectApplyAffineTransform(frame, CGAffineTransformMakeTranslation(-contentOffset.x, -contentOffset.y));
 }
 
+#pragma mark - Add/remove
+
+- (void)itemDidBecomeVisibleForSurface:(MCSurface *)surface
+{
+    _visible = YES;
+}
+
+- (void)itemDidBecomeInvisibleForSurface:(MCSurface *)surface
+{
+    _visible = NO;
+}
+
 #pragma mark - Viewport bounds
 
 - (void)setTopViewportBound:(CGFloat)topViewportBound
