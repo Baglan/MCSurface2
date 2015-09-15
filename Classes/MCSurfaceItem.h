@@ -36,7 +36,7 @@
 - (void)updateView:(UIView *)view forSurface:(MCSurface *)surface;
 
 - (void)itemDidBecomeVisibleForSurface:(MCSurface *)surface;
-- (void)itemDidBecomeInisibleForSurface:(MCSurface *)surface;
+- (void)itemDidBecomeInvisibleForSurface:(MCSurface *)surface;
 
 - (void)addConstraint:(MCSurfaceConstraint *)constraint;
 
