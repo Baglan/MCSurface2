@@ -11,7 +11,11 @@
 @interface MCSurfaceViewControllerItem : MCSurfaceItem
 
 - (UIViewController *)newViewControllerForSurface:(MCSurface *)surface;
+
 - (void)prepareViewController:(UIViewController *)viewController forSurface:(MCSurface *)surface;
 - (void)updateViewController:(UIViewController *)viewController forSurface:(MCSurface *)surface;
+
+- (void)didPresentViewController:(UIViewController *)viewController forSurface:(MCSurface *)surface;
+- (void)didDismissViewController:(UIViewController *)viewController forSurface:(MCSurface *)surface;
 
 @end

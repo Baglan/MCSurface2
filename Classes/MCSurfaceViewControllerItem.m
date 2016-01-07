@@ -49,4 +49,30 @@
     // To be implemented by extending classes
 }
 
+- (void)didPresentView:(UIView *)view forSurface:(MCSurface *)surface
+{
+    UIViewController * viewController = [surface storedReusableViewControllerForView:view];
+    [self didPresentViewController:viewController forSurface:surface];
+    
+    [super didPresentView:view forSurface:surface];
+}
+
+- (void)didDismissView:(UIView *)view forSurface:(MCSurface *)surface
+{
+    UIViewController * viewController = [surface storedReusableViewControllerForView:view];
+    [self didDismissViewController:viewController forSurface:surface];
+    
+    [super didDismissView:view forSurface:surface];
+}
+
+- (void)didPresentViewController:(UIViewController *)viewController forSurface:(MCSurface *)surface
+{
+    // To be implemented by extending classes
+}
+
+- (void)didDismissViewController:(UIViewController *)viewController forSurface:(MCSurface *)surface
+{
+    // To be implemented by extending classes
+}
+
 @end

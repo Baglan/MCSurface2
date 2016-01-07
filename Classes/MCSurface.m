@@ -403,14 +403,16 @@ enum MCSurface_ScrollDirection {
         [_currentViews removeObjectForKey:item.indexPath];
         [_currentItems removeObject:item];
         view.hidden = YES;
-        [item itemDidBecomeInvisibleForSurface:self];
+        
+        [item didDismissView:view forSurface:self];
     }
     
     for (MCSurfaceItem * item in itemsToAdd) {
         UIView * view = [item viewForSurface:self];
         [_currentViews setObject:view forKey:item.indexPath];
         [_currentItems addObject:item];
-        [item itemDidBecomeVisibleForSurface:self];
+        
+        [item didPresentView:view forSurface:self];
     }
     
     for (MCSurfaceItem * item in visible) {

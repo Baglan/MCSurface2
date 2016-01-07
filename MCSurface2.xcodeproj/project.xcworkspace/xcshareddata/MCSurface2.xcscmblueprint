@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4861C8339CB52D2377C7D12486C91CDE149F10A1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E793E9FD6F97D86A7EE613393AF85E80BB53160F" : 0,
+    "4861C8339CB52D2377C7D12486C91CDE149F10A1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AA5FBD12-590F-4A32-B0DA-1C3DB39086FB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E793E9FD6F97D86A7EE613393AF85E80BB53160F" : "MCSurface2MCButtonView",
+    "4861C8339CB52D2377C7D12486C91CDE149F10A1" : "MCSurface2"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MCSurface2",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MCSurface2.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Baglan\/MCSurface2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4861C8339CB52D2377C7D12486C91CDE149F10A1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Baglan\/MCButtonView",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E793E9FD6F97D86A7EE613393AF85E80BB53160F"
+    }
+  ]
+}

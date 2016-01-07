@@ -24,8 +24,6 @@
 
 @property (nonatomic, readonly) NSMutableArray * constraints;
 
-@property (nonatomic, readonly) BOOL visible;
-
 - (void)setViewportFrame:(CGRect)frame atContentOffset:(CGPoint)contentOffset;
 - (void)setFrame:(CGRect)frame;
 - (CGRect)frameForSurface:(MCSurface *)surface;
@@ -35,8 +33,8 @@
 - (void)prepareView:(UIView *)view forSurface:(MCSurface *)surface;
 - (void)updateView:(UIView *)view forSurface:(MCSurface *)surface;
 
-- (void)itemDidBecomeVisibleForSurface:(MCSurface *)surface;
-- (void)itemDidBecomeInvisibleForSurface:(MCSurface *)surface;
+- (void)didPresentView:(UIView *)view forSurface:(MCSurface *)surface;
+- (void)didDismissView:(UIView *)view forSurface:(MCSurface *)surface;
 
 - (void)addConstraint:(MCSurfaceConstraint *)constraint;
 

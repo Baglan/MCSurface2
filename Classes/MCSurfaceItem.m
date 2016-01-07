@@ -128,16 +128,14 @@
     view.frame = CGRectApplyAffineTransform(frame, CGAffineTransformMakeTranslation(-contentOffset.x, -contentOffset.y));
 }
 
-#pragma mark - Add/remove
-
-- (void)itemDidBecomeVisibleForSurface:(MCSurface *)surface
+- (void)didPresentView:(UIView *)view forSurface:(MCSurface *)surface
 {
-    _visible = YES;
+    // To be implemented by extending classes
 }
 
-- (void)itemDidBecomeInvisibleForSurface:(MCSurface *)surface
+- (void)didDismissView:(UIView *)view forSurface:(MCSurface *)surface
 {
-    _visible = NO;
+    // To be implemented by extending classes
 }
 
 #pragma mark - Viewport bounds
